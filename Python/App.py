@@ -38,6 +38,7 @@ class LinkedList:
             self.head.next = None
             self.head = None
             self.head = nextHead
+            self.head.prev = None
 
     def display(self):
         if self.head is None:

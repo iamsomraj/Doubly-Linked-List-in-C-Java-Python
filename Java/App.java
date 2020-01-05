@@ -1,6 +1,5 @@
 import java.util.*;
 
-import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
 
 class Node {
   int data;
@@ -52,9 +51,9 @@ class LinkedList {
       Node nextHead = this.head.next;
       this.head.prev = null;
       this.head.next = null;
-      this.head.data = null;
       this.head = null;
       this.head = nextHead;
+      this.head.prev = null;
     }
   }
 
