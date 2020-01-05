@@ -5,7 +5,11 @@ Doubly Linked List in C Java Python is an implementation of DLL using 3 differen
 
 ## <img src="image.png" style="zoom:200%;" />
 
-​	
+## Note
+
+Date 06.01.2019:
+
+There is an issue in C language. I am unable to set new head and also clear the head previous pointer. Therefore, during reverse display it is going to an inifinite loop.
 
 ## Functions Implemented
 
