@@ -3,7 +3,7 @@ Doubly Linked List in C Java Python is an implementation of DLL using 3 differen
 
 ## Image
 
-## <img src="image.png" style="zoom:200%;" />
+## <img src="image.png" />
 
 ## Note
 
