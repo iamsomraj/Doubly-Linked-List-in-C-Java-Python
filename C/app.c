@@ -1,7 +1,8 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-typedef struct node {
+typedef struct node
+{
     struct node *prev;
     int data;
     struct node *next;
@@ -9,18 +10,21 @@ typedef struct node {
 
 Node *head = NULL;
 
-Node* create();
-void push(Node**);
-void pop(Node**);
-void display(Node*);
-void reverseDisplay(Node*);
+Node *create();
+void push(Node **);
+void pop(Node **);
+void display(Node *);
+void reverseDisplay(Node *);
 
-int main() {
+int main()
+{
     int ch;
-    do {
+    do
+    {
         printf("\nEnter choice:\n1.Push\n2.Pop\n3.Display\n4.Reverse Display\n5.Exit\n\n");
-        scanf("%d",&ch);
-        switch(ch) {
+        scanf("%d", &ch);
+        switch (ch)
+        {
         case 1:
             push(&head);
             break;
@@ -41,27 +45,32 @@ int main() {
             break;
         }
 
-    } while(ch!=5);
+    } while (ch != 5);
 }
 
-Node* create() {
+Node *create()
+{
 
     int data;
     printf("\nEnter the data for the node: \n");
-    scanf("%d",&data);
-    Node* new = (Node*)malloc(sizeof(Node));
+    scanf("%d", &data);
+    Node *new = (Node *)malloc(sizeof(Node));
     new->data = data;
     new->prev = NULL;
     new->next = NULL;
-    printf("\nThe node with the data %d is pushed successfully!\n",new->data);
+    printf("\nThe node with the data %d is pushed successfully!\n", new->data);
     return new;
 }
 
-void push(Node** head) {
-    Node* new = create();
-    if( *head == NULL ) {
+void push(Node **head)
+{
+    Node *new = create();
+    if (*head == NULL)
+    {
         *head = new;
-    } else {
+    }
+    else
+    {
         new->next = *head;
         new->prev = NULL;
         (*head)->prev = new;
@@ -69,48 +78,67 @@ void push(Node** head) {
     }
 }
 
-void pop(Node** head) {
-    if ( *head == NULL ) {
+void pop(Node **head)
+{
+    if (*head == NULL)
+    {
         printf("\nThe linked list is empty!\n");
-    } else {
-        Node* pointer = *head;
-        printf("\nThe element %d is popped from DLL!\n",pointer->data);
-        *head = pointer->next;
+    }
+    else
+    {
+        printf("\nThe element %d is popped from DLL!\n", (*head)->data);
+        if ((*head)->next != NULL)
+        {
+            Node *newHead = (*head)->next;
+            free(*head);
+            newHead->prev = NULL;
+            *head = newHead;
+        }
+        else{
+            free(*head);
+            *head=NULL;
+        }
     }
 }
-
-void display(Node* head) {
-    if( head == NULL ) {
+void display(Node *head)
+{
+    if (head == NULL)
+    {
         printf("\nLinked List is empty!\n");
     }
-    else {
-        Node* pointer = head;
+    else
+    {
+        Node *pointer = head;
         printf("\nThe elements of DLL are displayed: \n");
-        while( pointer != NULL ) {
-            printf("\n%d\n",pointer->data);
+        while (pointer != NULL)
+        {
+            printf("\n%d\n", pointer->data);
             pointer = pointer->next;
         }
     }
 }
 
-void reverseDisplay(Node *head) {
-    if( head == NULL ) {
+void reverseDisplay(Node *head)
+{
+    if (head == NULL)
+    {
         printf("\nLinked List is empty!\n");
     }
-    else {
-        Node* pointer = head;
-        Node* prepointer;
-        while( pointer != NULL ) {
+    else
+    {
+        Node *pointer = head;
+        Node *prepointer;
+        while (pointer != NULL)
+        {
             prepointer = pointer; // storing the reference
             pointer = pointer->next;
         }
         pointer = prepointer; // assigning the reference of the last node
         printf("\nThe elements of DLL are displayed in reverse order: \n");
-        while( pointer != head->prev ) {
-            printf("\n%d\n",pointer->data);
+        while (pointer != NULL)
+        {
+            printf("\n%d\n", pointer->data);
             pointer = pointer->prev;
         }
-
-
     }
 }

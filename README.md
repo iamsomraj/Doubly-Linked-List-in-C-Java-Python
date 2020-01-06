@@ -7,13 +7,17 @@ Doubly Linked List in C Java Python is an implementation of DLL using 3 differen
 
 ## Note
 
-Date 06.01.2019:
+~~Date 06.01.2019:~~
 
-There is an issue in C language. I am unable to set new head and also clear the head previous pointer. Therefore, during reverse display it is going to an infinite loop.
+~~There is an issue in C language. I am unable to set new head and also clear the head previous pointer. Therefore, during reverse display it is going to an infinite loop.~~
 
-Newer Update:
+~~Newer Update:~~
 
-I have fixed the error. But I just tweaked my reverse display so that it can work normally. Feel free to suggest any work around.
+~~I have fixed the error. But I just tweaked my reverse display so that it can work normally. Feel free to suggest any work around.~~
+
+Fixed:
+
+Thanks to [Rohan](https://github.com/RohanAlmighty) 😊 . He resolved the issue!
 
 ## Functions Implemented
 
