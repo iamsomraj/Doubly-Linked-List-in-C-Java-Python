@@ -76,7 +76,6 @@ void pop(Node** head) {
         Node* pointer = *head;
         printf("\nThe element %d is popped from DLL!\n",pointer->data);
         *head = pointer->next;
-        free(pointer);
     }
 }
 
@@ -107,7 +106,7 @@ void reverseDisplay(Node *head) {
         }
         pointer = prepointer; // assigning the reference of the last node
         printf("\nThe elements of DLL are displayed in reverse order: \n");
-        while( pointer != NULL ) {
+        while( pointer != head->prev ) {
             printf("\n%d\n",pointer->data);
             pointer = pointer->prev;
         }
