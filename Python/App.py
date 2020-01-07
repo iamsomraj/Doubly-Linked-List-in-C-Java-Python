@@ -44,6 +44,7 @@ class LinkedList:
         if self.head is None:
             print("\nThe linked list is empty!\n")
         else:
+            print("\nThe linked list is displayed: \n")
             headCopy = self.head
             headNewCopy = self.head
             while headCopy is not None:
@@ -55,6 +56,7 @@ class LinkedList:
         if self.head is None:
             print("\nThe linked list is empty!\n")
         else:
+            print("\nThe linked list is displayed in the reverse order: \n")
             prepointer = self.head
             headCopy = self.head
             headNewCopy = self.head
